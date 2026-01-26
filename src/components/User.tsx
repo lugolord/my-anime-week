@@ -19,7 +19,7 @@ function User () {
   const createUser = (username: string, image: string) => setUser({username, image})
 
   return (
-    <div className='flex gap-5 items-center'>
+    <div className='flex gap-5 items-center' id='user'>
       {user ? (
         <>
           <p>Bienvenido, <span className='text-[#818CF8]'>{user.username}</span></p>

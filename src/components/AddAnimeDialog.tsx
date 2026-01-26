@@ -35,7 +35,7 @@ export default function AddAnimeDialog ({ day } : { day: DayType }) {
   return (
     <Dialog>
       <DialogTrigger asChild>
-        <Button variant='ghost'>+</Button>
+        <Button variant='ghost' id='addAnimeBtn'>+</Button>
       </DialogTrigger>
       <DialogContent className="sm:max-w-106.25">
         <form onSubmit={handleSubmit}>

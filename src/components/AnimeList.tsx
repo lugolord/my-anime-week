@@ -4,7 +4,7 @@ import Anime from './Anime'
 
 function AnimeList ({ animes, day } : { animes: AnimeType[], day: DayType }) {
   if (animes.length === 0) {
-    return <p className='mt-10 text-center text-muted-foreground'>no has agregado animes</p>
+    return <p className='mt-10 text-center text-muted-foreground' id='animeList'>no has agregado animes</p>
   }
 
   return (
