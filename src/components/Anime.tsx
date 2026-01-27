@@ -19,7 +19,10 @@ function Anime ({ anime, day } : { anime: AnimeType, day: DayType }) {
       <ContextMenuTrigger>
         <div className={`p-3 flex items-center gap-3 hover:bg-gray-100/15 ${anime.visto ? 'opacity-50' : ''}`}>
           <div className='w-1/3'>
-            {anime.image ? <img src={anime.image} alt={anime.name} className='size-12 object-cover rounded' /> : <div className='size-12 bg-gray-200 rounded'></div>}
+            {anime.image ? 
+              <img src={anime.image} alt={anime.name} className='size-12 object-cover rounded' /> : 
+              <div className='size-12 bg-[#323339] rounded'></div>
+            }
           </div>
           <p className={`text-sm overflow-hidden ${anime.visto ? 'line-through' : ''}`}>
             {anime.name}
