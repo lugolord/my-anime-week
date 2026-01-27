@@ -4,11 +4,6 @@ import { saveUser } from '@/utils/saveUser'
 import { AvatarMenu } from './AvatarMenu'
 import HandleUserDialog from './HandleUserDialog'
 
-type UserType = {
-  username: string
-  image: string
-}
-
 function User () {
   const [user, setUser] = useState<UserType | null>(loadUser)
 
@@ -30,6 +25,11 @@ function User () {
       )}
     </div>
   )
+}
+
+type UserType = {
+  username: string
+  image: string
 }
 
 export default User
