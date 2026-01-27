@@ -12,24 +12,17 @@ import {
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { useAnime } from '@/context/useAnime'
-import { useRef } from 'react'
+import { useState } from 'react'
 import type { DayType } from '@/types/DayType'
 
 export default function AddAnimeDialog ({ day } : { day: DayType }) {
+  const [username, setUsername] = useState('')
+  const [image, setImage] = useState('')
   const { addAnime } = useAnime()
-  const nameRef = useRef<HTMLInputElement | null>(null)
-  const imageRef = useRef<HTMLInputElement | null>(null)
 
   const handleSubmit = (e : React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
-    const nameInput = nameRef.current
-    const imageInput = imageRef.current
-
-    if (!nameInput) return
-    if (!imageInput) return
-    if (!nameInput.value) return
-
-    addAnime(day, {name: nameInput.value, id: crypto.randomUUID(), image: imageInput.value, visto: false})
+    addAnime(day, {name: username, id: crypto.randomUUID(), image: image, visto: false})
   }
 
   return (
@@ -48,18 +41,31 @@ export default function AddAnimeDialog ({ day } : { day: DayType }) {
           <div className="grid gap-4">
             <div className="grid gap-3">
               <Label htmlFor="name">Nombre</Label>
-              <Input id="name" name="name" placeholder="Ej: Naruto" ref={nameRef} required />
+              <Input 
+                id="name" 
+                name="name"
+                placeholder="Ej: Naruto" 
+                required
+                onInput={({ currentTarget }) => setUsername(currentTarget.value)}
+              />
             </div>
             <div className="grid gap-3 mb-5">
               <Label htmlFor="image">Imagen</Label>
-              <Input id="image" name="image" placeholder='ingresa la url de la imagen' ref={imageRef} />
+              <Input 
+                id="image" 
+                name="image" 
+                placeholder='ingresa la url de la imagen' 
+                onInput={({ currentTarget }) => setImage(currentTarget.value)}
+              />
             </div>
           </div>
           <DialogFooter>
             <DialogClose asChild>
               <Button variant="outline">Cancel</Button>
             </DialogClose>
-            <Button type='submit'>Agregar</Button>
+            <DialogClose asChild disabled={username.length < 1}>
+              <Button type='submit'>Agregar</Button>
+            </DialogClose>
           </DialogFooter>
         </form>
       </DialogContent>
