@@ -24,7 +24,7 @@ function Anime ({ anime, day } : { anime: AnimeType, day: DayType }) {
               <div className='size-12 bg-linear-to-br from-[#4F46E5] to-[#8B5CF6] rounded'></div>
             }
           </div>
-          <p className={`text-sm overflow-hidden ${anime.visto ? 'line-through' : ''}`}>
+          <p className={`text-sm uppercase font-general overflow-hidden ${anime.visto ? 'line-through' : ''}`}>
             {anime.name}
           </p>
         </div>
