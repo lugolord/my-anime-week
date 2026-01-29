@@ -17,7 +17,7 @@ function User () {
     <div className='flex gap-5 items-center' id='user'>
       {user ? (
         <>
-          <p>Bienvenido, <span className='text-[#818CF8]'>{user.username}</span></p>
+          <p className='font-general'>Bienvenido, <span className='text-[#818CF8]'>{user.username}</span></p>
           <AvatarMenu url={user.image} createUser={createUser} />
         </>
       ) : (
