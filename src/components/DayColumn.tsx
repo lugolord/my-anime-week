@@ -15,8 +15,6 @@ function DayColumn ({ day, today, animes } : DayColumnProps) {
   )
 }
 
-
-
 type DayColumnProps = {
   day: DayType
   today?: DayType
