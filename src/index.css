@@ -1,6 +1,25 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 
+@font-face {
+  font-family: 'Bebas Neue';
+  src: url('/src/assets/fonts/Bebas_Neue/BebasNeue-Regular.ttf') format('truetype');
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Inter';
+  src: url('/src/assets/fonts/Inter/Inter-VariableFont_opsz\,wght.ttf') format('truetype');
+  font-style: normal;
+  font-display: swap;
+}
+
+@theme {
+  --font-title: 'Bebas Neue', sans-serif;
+  --font-general: 'Inter', sans-serif;
+}
+
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
