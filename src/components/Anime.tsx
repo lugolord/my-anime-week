@@ -17,7 +17,7 @@ function Anime ({ anime, day } : { anime: AnimeType, day: DayType }) {
   return (
     <ContextMenu>
       <ContextMenuTrigger>
-        <div className={`p-3 flex items-center gap-3 hover:border hover:border-[#272195] ${anime.visto ? 'opacity-50' : ''}`}>
+        <div className={`p-3 flex items-center gap-3 hover:bg-accent-foreground ${anime.visto ? 'opacity-50' : ''}`}>
           <div className='w-1/3'>
             {anime.image ? 
               <img src={anime.image} alt={anime.name} className='size-12 object-cover rounded' /> : 
