@@ -23,6 +23,7 @@ export default function AddAnimeDialog ({ day } : { day: DayType }) {
   const handleSubmit = (e : React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     addAnime(day, {name: username, id: crypto.randomUUID(), image: image, visto: false})
+    setImage('')
   }
 
   return (
