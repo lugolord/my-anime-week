@@ -29,20 +29,21 @@ export default function AddAnimeDialog ({ day } : { day: DayType }) {
   return (
     <Dialog>
       <DialogTrigger asChild>
-        <Button variant='ghost' id='addAnimeBtn'>+</Button>
+        <Button variant='ghost' id='addAnimeBtn' className='font-general'>+</Button>
       </DialogTrigger>
       <DialogContent className="sm:max-w-106.25">
         <form onSubmit={handleSubmit}>
           <DialogHeader className='mb-3'>
-            <DialogTitle>Agregar anime</DialogTitle>
-            <DialogDescription>
+            <DialogTitle className='font-general'>Agregar anime</DialogTitle>
+            <DialogDescription className='font-general'>
               El nombre es obligatorio
             </DialogDescription>
           </DialogHeader>
           <div className="grid gap-4">
             <div className="grid gap-3">
-              <Label htmlFor="name">Nombre</Label>
-              <Input 
+              <Label htmlFor="name" className='font-general'>Nombre</Label>
+              <Input
+                className='font-general' 
                 id="name" 
                 name="name"
                 placeholder="Ej: Naruto" 
@@ -51,8 +52,9 @@ export default function AddAnimeDialog ({ day } : { day: DayType }) {
               />
             </div>
             <div className="grid gap-3 mb-5">
-              <Label htmlFor="image">Imagen</Label>
-              <Input 
+              <Label htmlFor="image" className='font-general'>Imagen</Label>
+              <Input
+                className='font-general' 
                 id="image" 
                 name="image" 
                 placeholder='ingresa la url de la imagen' 
@@ -62,10 +64,10 @@ export default function AddAnimeDialog ({ day } : { day: DayType }) {
           </div>
           <DialogFooter>
             <DialogClose asChild>
-              <Button variant="outline">Cancel</Button>
+              <Button variant="outline" className='font-general'>Cancel</Button>
             </DialogClose>
             <DialogClose asChild disabled={username.length < 1}>
-              <Button type='submit'>Agregar</Button>
+              <Button type='submit' className='font-general'>Agregar</Button>
             </DialogClose>
           </DialogFooter>
         </form>
