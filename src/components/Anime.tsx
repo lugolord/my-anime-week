@@ -35,7 +35,6 @@ function Anime ({ anime, day } : { anime: AnimeType, day: DayType }) {
       <ContextMenuContent>
         <ContextMenuGroup>
           <ContextMenuItem onClick={() => updateViewStatus(anime, day)}>visto</ContextMenuItem>
-          <ContextMenuItem>editar</ContextMenuItem>
           <ContextMenuItem variant='destructive' onClick={handleDelete}>eliminar</ContextMenuItem>
         </ContextMenuGroup>
       </ContextMenuContent>
