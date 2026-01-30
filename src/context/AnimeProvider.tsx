@@ -53,7 +53,18 @@ function AnimeProvider ({ children } : { children: ReactElement }) {
     const animesCopy = animes[day].filter(el => el.id !== anime.id)
     setAnimes({...animes, [day]: animesCopy})
   }
-  
+
+  const resetWeekProgress = () => {
+    setAnimes(prev =>
+      Object.fromEntries(
+        Object.entries(prev).map(([day, animeList]) => [
+          day,
+          animeList.map(anime => ({ ...anime, visto: false }))
+        ])
+      ) as AnimesType
+    )
+  }
+
   return (
     <AnimeContext.Provider 
       value={{ 
@@ -62,7 +73,8 @@ function AnimeProvider ({ children } : { children: ReactElement }) {
         updateViewStatus, 
         getAnimeQty, 
         deleteAnime,
-        getAllAnimes 
+        getAllAnimes,
+        resetWeekProgress 
       }}
     >
       {children}

@@ -10,6 +10,7 @@ export type AnimeContextType = {
   getAnimeQty: (day: DayType) => number
   deleteAnime: (day: DayType, anime: AnimeType) => void
   getAllAnimes: () => number
+  resetWeekProgress: () => void
 }
 
 export const AnimeContext = createContext<AnimeContextType | null>(null)
