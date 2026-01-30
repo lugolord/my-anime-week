@@ -43,7 +43,7 @@ function HandleUserDialog ({ createUser, label, action } : UserDialogProps) {
           ) : (
             <Button 
               variant="default" 
-              className='cursor-pointer bg-[#8B5CF6] font-general'
+              className='cursor-pointer bg-[#8B5CF6] hover:bg-white hover:text-black transition delay-150 duration-300 ease-in-out font-general'
             >
               {label}
             </Button>
